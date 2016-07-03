@@ -1,0 +1,87 @@
+<div class="overlay"></div>
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
+    <h3><span class="pull-left">Chat</span><a href="javascript:void(0);" class="pull-right" id="closeRight"><i class="fa fa-times"></i></a></h3>
+</nav>
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+    <h3><span class="pull-left">Sandra Smith</span> <a href="javascript:void(0);" class="pull-right" id="closeRight2"><i class="fa fa-angle-right"></i></a></h3>
+    <div class="chat-write">
+    </div>
+</nav>
+<div class="menu-wrap">
+    <nav class="profile-menu">
+    </nav>
+    <button class="close-button" id="close-button">Close Menu</button>
+</div>
+<form class="search-form" action="#" method="GET">
+    <div class="input-group">
+        <input type="text" name="search" class="form-control search-input" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i class="fa fa-times"></i></button>
+                </span>
+    </div><!-- Input Group -->
+</form><!-- Search Form -->
+<main class="page-content content-wrap">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="sidebar-pusher">
+                <a href="javascript:void(0);" class="waves-effect waves-button waves-classic push-sidebar">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="logo-box">
+                <a href="{{ path('reregistration_homepage') }}" class="logo-text"><span>FL-SAISS</span></a>
+            </div><!-- Logo Box -->
+            <div class="search-button">
+                <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
+            </div>
+            <div class="topmenu-outer">
+                <div class="top-menu">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
+                        </li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
+                                    <span class="user-name">{{ app.user.username }}<i class="fa fa-angle-down"></i></span>
+                                    <img class="img-circle avatar" src="{{ asset('bundles/assets/images/users/no-image.jpg') }}" width="40" height="40" alt="">
+                                </a>
+                                <ul class="dropdown-menu dropdown-list" role="menu">
+                                    <li role="presentation"><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user"></i>Profile</a></li>
+                                    <li role="presentation"><a href="{{ path('fos_user_profile_edit') }}"><i class="fa fa-cogs"></i>Edite Profile</a></li>
+                                    <li role="presentation" class="divider"></li>
+                                    <li role="presentation"><a href="#"><i class="fa fa-lock"></i>Lock screen</a></li>
+                                    <li role="presentation"><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
+                                </ul>
+                            </li>
+                        {% endif %}
+                        <li>
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                                <span><i class="fa fa-sign-out m-r-xs"></i>
+                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                </span>
+                                </a>
+                            {% else %}
+                                <a href="{{ path('fos_user_security_login') }}">
+                                <span><i class="fa fa-sign-in m-r-xs"></i>
+                                    {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                                </span>
+                                </a>
+                            {% endif %}
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect waves-button waves-classic" id="showRight">
+                            </a>
+                        </li>
+                    </ul><!-- Nav -->
+                </div><!-- Top Menu -->
+            </div>
+        </div>
+    </div><!-- Navbar -->
