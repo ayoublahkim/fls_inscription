@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             //extra bundles
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Spy\TimelineBundle\SpyTimelineBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
@@ -31,10 +32,12 @@ class AppKernel extends Kernel
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Sonata\IntlBundle\SonataIntlBundle(),
+            new Sonata\TimelineBundle\SonataTimelineBundle(),
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-
+            new Application\Sonata\TimelineBundle\ApplicationSonataTimelineBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

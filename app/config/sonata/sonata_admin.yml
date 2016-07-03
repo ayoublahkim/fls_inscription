@@ -68,7 +68,7 @@ sonata_admin:
                 type: sonata.admin.block.admin_list
                 settings:
                     groups: [sonata.admin.group.content]
-
+            - { position: bottom, type: sonata.timeline.block.timeline, settings: { context: SONATA_ADMIN, max_per_page: 25 }}
         groups:
             sonata.admin.group.etudiants:
                 label:           Etudiants
@@ -109,10 +109,11 @@ sonata_admin:
 
             sonata.admin.group.administration:
                 label:           Administration
-                label_catalogue: ReregistrationBundle
+                label_catalogue: SonataAdminBundle
                 icon:            '<i class="fa fa-cogs"></i>'
                 items:
-                    - geek_dos_user.admin.user
+                    - sonata.user.admin.user
+                    - sonata.user.admin.group
                     - reregistration.admin.configuration
                     - sonata.media.admin.media
                     - sonata.media.admin.gallery

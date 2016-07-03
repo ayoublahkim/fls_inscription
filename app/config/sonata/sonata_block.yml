@@ -15,3 +15,4 @@ sonata_block:
         sonata.media.block.feature_media:
         sonata.user.block.menu:    # used to display the menu in profile pages
         sonata.user.block.account: # used to display menu option (login option)
+        sonata.timeline.block.timeline:

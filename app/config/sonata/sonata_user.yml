@@ -7,7 +7,7 @@ sonata_user:
         user_group: "my_custom_user_group_association_table_name"
 
     impersonating:
-        route:                page_slug
+        route:                sonata_admin_dashboard
         parameters:           { path: / }
 
     class:                  # Entity Classes
