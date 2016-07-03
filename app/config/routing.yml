@@ -1,0 +1,3 @@
+reregistration:
+    resource: "@ReregistrationBundle/Resources/config/routing.yml"
+    prefix:   /

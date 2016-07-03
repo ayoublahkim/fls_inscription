@@ -1,0 +1,87 @@
+reregistration_etudiantdeug:
+    resource: "@ReregistrationBundle/Resources/config/routing/etudiantdeug.yml"
+    prefix:   /etudiantdeug
+
+reregistration_etudiantlicence:
+    resource: "@ReregistrationBundle/Resources/config/routing/etudiantlicence.yml"
+    prefix:   /etudiantlicence
+
+reregistration_etudiantmaster:
+    resource: "@ReregistrationBundle/Resources/config/routing/etudiantmaster.yml"
+    prefix:   /etudiantmaster
+
+reregistration_etudiantdoctorat:
+    resource: "@ReregistrationBundle/Resources/config/routing/etudiantdoctorat.yml"
+    prefix:   /etudiantdoctorat
+
+reregistration_homepage:
+    path:     /
+    defaults: { _controller: ReregistrationBundle:Default:index }
+
+reregistration_choix_filiere:
+    path:     /choix/filiere
+    defaults: { _controller: ReregistrationBundle:ChoixFiliere:index }
+
+reregistration_registration:
+    path:     /inscription
+    defaults: { _controller: ReregistrationBundle:Inscription:index }
+
+reregistration_registration_deug:
+    path:     /inscription/deug
+    defaults: { _controller: ReregistrationBundle:Inscription:deug }
+
+reregistration_registration_licence:
+    path:     /inscription/licence/{parcours_id}
+    defaults: { _controller: ReregistrationBundle:Inscription:licence }
+
+reregistration_registration_master:
+    path:     /inscription/master
+    defaults: { _controller: ReregistrationBundle:Inscription:master }
+
+reregistration_registration_doctorat:
+    path:     /inscription/doctorat
+    defaults: { _controller: ReregistrationBundle:Inscription:doctorat }
+
+reregistration_re_registration:
+    path:     /re-inscription
+    defaults: { _controller: ReregistrationBundle:ReInscription:index }
+
+reregistration_re_registration_edite:
+    path:     /re-inscription/edite
+    defaults: { _controller: ReregistrationBundle:ReInscription:edit}
+
+reregistration_re_registration_checking_deug:
+    path:     /re-inscription/checking/deug
+    defaults: { _controller: ReregistrationBundle:ReInscription:checkingDeug }
+
+reregistration_re_registration_checking_licence:
+    path:     /re-inscription/checking/licence
+    defaults: { _controller: ReregistrationBundle:ReInscription:checkingLicence }
+
+reregistration_re_registration_checking_master:
+    path:     /re-inscription/checking/master
+    defaults: { _controller: ReregistrationBundle:ReInscription:checkingMaster }
+
+reregistration_re_registration_checking_doctorat:
+    path:     /re-inscription/checking/doctorat
+    defaults: { _controller: ReregistrationBundle:ReInscription:checkingDoctorat }
+
+reregistration_re_registration_deug:
+    path:     /re-inscription/deug
+    defaults: { _controller: ReregistrationBundle:ReInscription:deugCnePage }
+
+reregistration_re_registration_licence:
+    path:     /re-inscription/licence
+    defaults: { _controller: ReregistrationBundle:ReInscription:licenceCnePage }
+
+reregistration_re_registration_master:
+    path:     /re-inscription/master
+    defaults: { _controller: ReregistrationBundle:ReInscription:masterCnePage }
+
+reregistration_re_registration_doctorat:
+    path:     /re-inscription/doctorat
+    defaults: { _controller: ReregistrationBundle:ReInscription:doctoratCnePage }
+
+reregistration_re_create_pdf:
+    path:     /createPdf/{cne}
+    defaults: { _controller: ReregistrationBundle:GeneratePDF:createPdf }

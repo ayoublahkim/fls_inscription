@@ -2,6 +2,8 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@ReregistrationBundle/Resources/config/services.yml" }
+    - { resource: "fos/fos_user.yml" }
 
 parameters:
     locale: fr
